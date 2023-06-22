@@ -4,7 +4,7 @@
  */
 package telas;
 
-import DAO.ConsultaGeralDAO;
+import DAO.CarroDAO;
 import java.util.ArrayList;
 
 /**
@@ -19,7 +19,7 @@ public class TelaConsultaGeral extends javax.swing.JFrame {
     public TelaConsultaGeral() {
         initComponents();
         ArrayList<ArrayList<String>> matriz;
-          ConsultaGeralDAO todos = new ConsultaGeralDAO();
+          CarroDAO todos = new CarroDAO();
           matriz = todos.matrizTabela();
           for(int i = 0; i<matriz.size(); i++){
               this.tabela.addRowSelectionInterval(i, i);

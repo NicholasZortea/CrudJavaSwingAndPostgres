@@ -4,7 +4,7 @@
  */
 package telas;
 
-import DAO.DeletaCarroDAO;
+import DAO.CarroDAO;
 
 /**
  *
@@ -74,8 +74,8 @@ public class TelaDelecao extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DeletaCarroDAO deletar = new DeletaCarroDAO();
-        deletar.setIdDeletar(Integer.parseInt(this.tfId.getText()));
+        CarroDAO deletar = new CarroDAO();
+        deletar.setId(Integer.parseInt(this.tfId.getText()));
         deletar.deletar();
     }//GEN-LAST:event_jButton1ActionPerformed
 

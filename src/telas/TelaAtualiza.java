@@ -4,8 +4,7 @@
  */
 package telas;
 
-import DAO.AtualizaCarroDAO;
-import DAO.ConsultaCarroDAO;
+import DAO.CarroDAO;
 import model.Carro;
 
 /**
@@ -165,12 +164,12 @@ public class TelaAtualiza extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tfPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPrecoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_tfPrecoActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        ConsultaCarroDAO novaConsulta = new ConsultaCarroDAO();
-        novaConsulta.setID(Integer.parseInt(this.tfId.getText()));
+        CarroDAO novaConsulta = new CarroDAO();
+        novaConsulta.setId(Integer.parseInt(this.tfId.getText()));
         Carro novoCarro = novaConsulta.consulta();
         this.tfAno.setText(novoCarro.getAno());
         this.tfCor.setText(novoCarro.getCor());
@@ -189,7 +188,7 @@ public class TelaAtualiza extends javax.swing.JFrame {
         novoCarro.setPlaca(this.tfPlaca.getText());
         novoCarro.setPreco(Double.parseDouble(this.tfPreco.getText()));
         
-        AtualizaCarroDAO novaAtualizacao = new AtualizaCarroDAO();
+        CarroDAO novaAtualizacao = new CarroDAO();
         novaAtualizacao.setId(Integer.parseInt(this.tfId.getText()));
         novaAtualizacao.setCarro(novoCarro);
         novaAtualizacao.fazUpdate();

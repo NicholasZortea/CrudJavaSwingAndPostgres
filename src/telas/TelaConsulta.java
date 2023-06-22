@@ -4,7 +4,7 @@
  */
 package telas;
 
-import DAO.ConsultaCarroDAO;
+import DAO.CarroDAO;
 import model.Carro;
 
 /**
@@ -163,15 +163,15 @@ public class TelaConsulta extends javax.swing.JFrame {
 
     private void btnConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaActionPerformed
         int id = Integer.parseInt(this.tfId.getText());
-        ConsultaCarroDAO consulta = new ConsultaCarroDAO();
-        consulta.setID(id);
-        Carro carro = consulta.consulta();
-        this.tfAno.setText(carro.getAno());
-        this.tfCor.setText(carro.getCor());
-        this.tfFabricante.setText(carro.getFabricante());
-        this.tfModelo.setText(carro.getModelo());
-        this.tfPlaca.setText(carro.getPlaca());
-        this.tfPreco.setText(String.valueOf(carro.getPreco()));
+        CarroDAO consulta = new CarroDAO();
+        consulta.setId(id);
+        Carro novoCarro = consulta.consulta();
+        this.tfAno.setText(novoCarro.getAno());
+        this.tfCor.setText(novoCarro.getCor());
+        this.tfFabricante.setText(novoCarro.getFabricante());
+        this.tfModelo.setText(novoCarro.getModelo());
+        this.tfPlaca.setText(novoCarro.getPlaca());
+        this.tfPreco.setText(String.valueOf(novoCarro.getPreco()));
     }//GEN-LAST:event_btnConsultaActionPerformed
 
     private void tfIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIdActionPerformed

@@ -1,5 +1,6 @@
 package telas;
-import DAO.CadastraCarroDAO;
+import DAO.CarroDAO;
+import model.Carro;
 /**
  *
  * @author Nicholas
@@ -170,14 +171,16 @@ public class TelaCadastro extends javax.swing.JFrame {
         String fabricante = this.fabricante.getText();
         double preco = Double.parseDouble(this.preco.getText());
         String ano = this.ano.getText();
+        Carro novoCarro = new Carro();
         
-        CadastraCarroDAO daoCadastro = new CadastraCarroDAO();
-        daoCadastro.setAno(ano);
-        daoCadastro.setCor(cor);
-        daoCadastro.setFabricante(fabricante);
-        daoCadastro.setModelo(modelo);
-        daoCadastro.setPreco(preco);
-        daoCadastro.setPlaca(placa);
+        CarroDAO daoCadastro = new CarroDAO();
+        novoCarro.setAno(ano);
+        novoCarro.setCor(cor);
+        novoCarro.setFabricante(fabricante);
+        novoCarro.setModelo(modelo);
+        novoCarro.setPreco(preco);
+        novoCarro.setPlaca(placa);
+        daoCadastro.setCarro(novoCarro);
         daoCadastro.cadastraCarro();      
         
     }//GEN-LAST:event_btnCadastraActionPerformed
