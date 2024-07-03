@@ -15,7 +15,7 @@ public class ConectionFactory {
             System.out.println("conexao bem sucedida!");
             return connection;
         }catch(SQLException e){
-            System.out.println("deu pau");
+            System.out.println("deu erro");
             throw new RuntimeException(e);
         }
 }
